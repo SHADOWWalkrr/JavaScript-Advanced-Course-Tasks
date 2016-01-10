@@ -11,6 +11,7 @@ var app = app || {};
      * Base app config
      */
     var config = {
+
         el: '.wrapper'
     },
 
@@ -59,6 +60,11 @@ var app = app || {};
         notify: function (eventName,params) {
 
             Events.publish(elements.el, eventName,params);
+        },
+
+        remove: function (eventName, handler) {
+
+            Events.unsubscribe(elements.el, eventName, handler);
         }
     };
 
